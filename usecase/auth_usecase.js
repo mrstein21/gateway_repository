@@ -4,7 +4,7 @@ var jwt=require('jsonwebtoken');
 dotenv.config();
 module.exports={
     login:async(request)=>{
-      var data=await axios.post(process.env.AUTH_SERVICE+":"+process.env.AUTH_SERVICE_PORT+"/auth/login",{
+      var data=await axios.post(process.env.AUTH_SERVICE+"/auth/login",{
         "email":request.email,
         "password":request.password
       });
@@ -18,7 +18,7 @@ module.exports={
       }
     },
     register:async(request)=>{
-        var data=await axios.post(process.env.AUTH_SERVICE+":"+process.env.AUTH_SERVICE_PORT+"/auth/register",{
+        var data=await axios.post(process.env.AUTH_SERVICE+"/auth/register",{
             "email":request.email,
             "name":request.name,
             "password":request.password
