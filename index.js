@@ -28,7 +28,9 @@ data = {
     msg: process.env.GREET,
 };
   
-app.route("/").get((req, res) => res.json(data));  
+app.route("/").get((req, res) => res.json(data));
+app.route("/welcome").get((req, res) => res.json({success:true,message:"Welcome to Mr.Stein API Microservice"}));  
+
 app.listen(port, "0.0.0.0", () =>
    console.log(`welcome your listening at port ${port}`)
 );
